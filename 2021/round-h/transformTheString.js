@@ -13,7 +13,8 @@ function countConvertString(string, value) {
                 if(operationCount < 0) {
                     operationCount *= -1;
                 }
-                operationCounts.push(operationCount);
+                let counterClockWise = 26 - operationCount;
+                operationCounts.push(Math.min(operationCount, counterClockWise));
             }
             if(operationCounts.length){
                 const optimalOperationCount = Math.min(...operationCounts);
